@@ -54,8 +54,8 @@ else{
 var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: 'rohithkrishna.vit2000@gmail.com',
-        pass: 'ldtcgkgdgsvnbsig'
+        user: 'enter you email id',
+        pass: 'authentication-code for you mail'
     }
 });
 var pt ='D://5thsem//certificates//'

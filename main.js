@@ -1,6 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose')
-//mongoose.connect("mongodb://localhost/dbk9")
+//mongoose.connect("mongodb://localhost/dbk9") -> for local db
 
 mongoose.connect('mongodb+srv://rohit123:pwd123@cluster0.b8bzw.mongodb.net/prj?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }).then(() => console.log('MongoDB Atlas connected...')).catch((err) => console.log(err));
 var app=express();
@@ -17,7 +17,35 @@ var crscon = require('./models/coursecontent')
 var admin = require('./models/admin')
 const nodemailer = require('nodemailer');
 
+/* uncomment  the below code to create courses  ,coursecontent and admin , student record is created using registration page*/ 
+/*courses.create({ CrsName:"Node js",imageurl:"https://colorlib.com/wp/wp-content/uploads/sites/2/nodejs-frameworks.png",description:"This course provides an detailed explanation of key concepts of NODE JS with illustrations and hand on experience using online tools, designed to enhance the  concepts of students"}
+,
+function(err,f){
+if(err){console.log(err)}
+else{
+    console.log(f)
+}
+})
 
+admin.create({usern:"admin", pwd:"admin"}, function(err,f){
+    if(err){
+        res.send(err)
+    }
+
+    else{
+        console.log(f)
+    }
+})
+
+crscon.create({ crsname:"Node js",crsimg:"https://colorlib.com/wp/wp-content/uploads/sites/2/nodejs-frameworks.png",crsintro:"This course provides an detailed explanation of key concepts of NODE JS with illustrations and hand on experience using online tools, designed to enhance the  concepts of students",crscont:"Node.js is an epitome of an exceptionally customizable and scalable tech. The server engine utilizes an event-based, non-blocking I/O model. This makes the adaptation of Javascript easier to the machine language providing execution of the code super fast. Thanks to Javascript and Node.js, the code operates faster in server-to-client direction. This enhances the performance ability of the web applications to the next level. To be more precise, web application development in Node.js ensures a steady and secure non-blocking I/O model, simplifying the code beautifully"},
+function(err,f){
+if(err){console.log(err)}
+else{
+    console.log(f)
+}
+})
+
+*/
 
 
 

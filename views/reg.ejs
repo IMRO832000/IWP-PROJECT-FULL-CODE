@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   
+    <link rel="stylesheet" href="reg.css">
+    
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> 
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white" >
+    <a class="navbar-brand mb-3" href="#">
+      <img src="/images/logo.png" width="80px" height="50px"> 
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+     aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      
+
+
+      <ul class="navbar-nav mr-auto container-fluid">
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-list-ul"></i> Courses
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/freec">Free Courses</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/paidc">PAID Courses</a>
+            <div class="dropdown-divider"></div>
+            
+          </div>
+        </li>
+        <a class="nav-link btn btn-outline-success"  id ="hm" href="/hmp">Home</a>
+        <a class="nav-link btn btn-outline-info" href="/about">About</a>
+      
+
+        
+
+      </ul>
+          
+            <a style="margin-right: 15px;"class="nav-link btn btn-outline-success" href="/login">Login</a>
+            <a class="nav-link btn btn-success mx-2" href="/reg">Signup</a>
+    </div>
+  </nav>
+
+
+
+<body>
+    <form action="/hmp" method="POST">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-12">
+                   <br><br><br>
+                    <div class="row">
+                        <div class="col-md-6 mx-auto">
+                            <div class="card border-secondary">
+                                <div class="card-header">
+                                    <h3 class="mb-0 my-2">Sign Up</h3>
+                                </div>
+                                <div class="card-body">
+                                    <form class="form" role="form" autocomplete="off" >
+                                        <div class="form-group">
+                                            <label for="inputName">Name</label>
+                                            <input type="text" class="form-control" name ="inputName"id="inputName"  onblur="return nm()"placeholder="full name">
+                                        </div>
+                                         <script>
+
+                                           function nm(){
+
+                                                let na = document.getElementById("inputName");
+                                                if(na.value==""||na.value==null){
+                                                  alert("Please enter you name")
+                                                  return false;
+                                                }
+
+                                           }
+                                         </script>
+
+
+
+
+                                        <div class="form-group">
+
+                                            <label for="dob">Date of birth</label>
+                                            <input type="date" class="form-control" name="dob" id="dob" placeholder="Date of birth" onblur="return ag()" required >
+                                        
+                                            <input type="number"  name="age" id="age" style="display: none;">
+                                        </div>
+                                        
+                                        
+                                        
+                                        <script>
+                                            function ag(){
+                                                var a = document.getElementById("dob").value;
+                                                    var d2= new Date(a)
+                                                    var d1 = new Date()
+
+                                                    var c2 = d2.getFullYear()
+                                                    var c1  = d1.getFullYear()
+                                                    var age = c1-c2;
+                                                document.getElementById("age").value=age;
+                                                
+
+                                            }
+                                        </script>
+                                        
+                                       
+
+
+                                        <div class="form-group">
+                                            <label for="inputEmail3">Gmail</label>
+                                            <input type="email" class="form-control" id="inputEmail3" name="inputEmail3" placeholder="email@gmail.com"  value="" onblur="return eml()"required="">
+                                        </div>
+                                      <script>
+
+                                          function eml(){
+                                            var emailPattern = new RegExp("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$")
+                                            var email =document.getElementById("inputEmail3");
+                                            var res = emailPattern.test(email.value);
+                                            if(!res){
+                                              alert("Gmail entered is invalid")
+                                              return false;
+                                            }
+
+                                          }
+
+
+                                      </script>
+                                       
+                                        <div class="form-group">
+                                            <label for="username">Username</label>
+                                            <input type="text" class="form-control" id="username" name="username" placeholder="username" value="" required="">
+                                        </div>
+
+
+
+
+                                        <div class="form-group">
+                                            <label for="inputPassword3">Password</label>
+                                            <input type="password" class="form-control" id="inputPassword3" onblur="return pr()"name="inputPassword3" placeholder="password"  required="">
+                                        </div>
+
+
+                                          <script>
+                                         
+                                            function pr(){
+
+                                              let pwe = document.getElementById("inputPassword3").value;
+                                              if(pwe==null){
+                                                alert("please enter the password")
+                                                return false;
+                                              }
+                                               
+
+
+
+                                            }
+
+
+                                          </script>
+
+
+                                        <div class="form-group">
+                                            <label for="inputVerify3">Verify</label>
+                                            <input type="password" class="form-control" id="inputVerify3" name="inputVerify3" placeholder="password (again)" onblur="return vld()"required >
+                                        </div>
+                                 
+                                        
+
+                                      <script>
+                                 function vld(){
+
+                                    var p1 = document.getElementById("inputPassword3");
+                                    var p2 = document.getElementById("inputVerify3");
+                                    
+                      
+                                    
+                                    
+                                    
+                                    if(p1.value!=p2.value){
+                                      alert("enter the same password!!")
+                                      return false;
+                                    }
+                                 }
+                                      </script>
+
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-success btn-lg float-right">Register</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/row-->
+        
+                </div>
+                <!--/col-->
+            </div>
+            <!--/row-->
+        </div>
+
+
+
+
+
+
+    </form>
+
+    <div class="col">
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active text-info" href="#">Terms</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-info" href="#">Privacy and Cookie Police</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-info" href="#">Intellectual Property</a>
+            </li>
+          </ul>
+  
+    </div>
+
+
+
+
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  
+  <script>
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
+  
+
+    
+  </script>
+</body>
+</html>

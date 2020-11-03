@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> 
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
+
+</head>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white" >
+    <a class="navbar-brand mb-3" href="#">
+    <img src="/images/logo.png" width="80px" height="50px"> 
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+    
+  
+  
+    <ul class="navbar-nav mr-auto container-fluid">
+    
+      
+        <a class="nav-link btn btn-outline-info" style="margin-right:20px;" href="/about">About</a>
+  
+    </ul>
+    
+  
+        <a class="nav-link btn btn-outline-danger mx-3" href="/adlog">LOGOUT</a>  
+        
+            
+    </div>
+  </nav>
+<div style="background-color: cyan;">
+  <hr>
+
+ <marquee>STUDENT ATTENDANCE TO BE UPDATED REGULARLY</marquee>
+  <hr>
+</div>
+
+
+<body style="background-image:url(https://images.unsplash.com/photo-1423592707957-3b212afa6733?ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80);background-repeat: no-repeat;background-size: cover;">
+    
+<br> <br>
+
+    <% ad.forEach(function(el){ %>
+        <div style="background-color: black;opacity: 0.8;width: 250px;">
+        <form action="/attup/<%=el._id%>?_method=PUT" method="POST">
+      <label style="color: darkgoldenrod;">  Student Name: <%=el.Name%> </label>  
+        <br>
+    <label style="color: darkgoldenrod;">Attendance:</label> <br>
+    <label style="color: darkgoldenrod;">Class attended</label>
+    <input type="number" name="Att" value="<%=el.Att%>">
+    <label style="color: darkgoldenrod;">Total number of classes</label>
+    <input type="number" name="tot" value="<%=el.totl%>">
+        <button type="submit" value="POST" class="btn btn-danger mx-1" >POST</button>
+    </form>
+    </div>
+    <br>
+    <%})%>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<nav class="navbar navbar-inverse" style="height: 60px;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <img src="/public/images/logo.png" width="80px" height="60px">
+           </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/hmp">Home</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Courses<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/freec">Free Courses offered</a></li>
+            <li><a href="/paidc">Paid Courses</a></li>
+          
+          </ul>
+        </li>
+        <li><a href="/about">ABOUT US</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/reg"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+<div class="login">
+    <h1>Login</h1>
+    <form method="post">
+        <input type="text" name="u" placeholder="Username" required="required" />
+        <input type="password" name="p" placeholder="Password" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+    </form>
+</div>
+
+<body>
+    
+</body>
+</html>

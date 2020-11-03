@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=usr.Name%><%=crs.CrsName%></title>
+</head>
+<style>
+    @media print{
+        .np{
+            visibility: hidden;
+        }
+        .ot{visibility: visible;
+    background-color: darkorchid;
+}
+
+.it{visibility: visible;
+    background-color: deepskyblue;
+}
+    }
+   
+    .signature, .title { 
+    float:left;
+      border-top: 1px solid #000;
+      width: 200px; 
+      text-align: center;
+    }
+
+
+</style>
+
+
+<center>
+   
+    <div class="ot" style="width:800px; height:600px; padding:20px; text-align:center; border: 10px solid #787878;" >
+    <div class="it" style="width:750px; height:550px; padding:20px; text-align:center; border: 5px solid #787878;">
+           <span style="font-size:50px; font-weight:bold">Certificate of Completion</span>
+           <br><br>
+           <span style="font-size:25px"><i>This is to certify that</i></span>
+           <br><br>
+           <span style="font-size:30px"><b><%=usr.Name%></b></span><br/><br/>
+           <span style="font-size:25px"><i>has completed the course</i></span> <br/><br/>
+           <span style="font-size:30px;font-family: cursive;"><%=crs.CrsName%></span> <br/><br/>
+           <span style="font-size:25px;font-family: cursive;"><i>Completed Date</i></span><br>
+           <br>
+           <span style="font-size:25px"><i><div id="dt"></div></i></span><br>
+    <table style="margin-top:40px;float:left">
+    <tr>
+    <td><span><b style="font-family:cursive;"><%=usr.Name%></b></td>
+    </tr>
+    <tr>
+    <td style="width:200px;float:left;border:0;border-bottom:1px solid #000;"></td>
+    </tr>
+    <tr>
+    <td style="text-align:center"><span><b style="font-family: cursive;">Signature of the student</b></td>
+    </tr>
+    </table>
+    <table style="margin-top:40px;float:right">
+  
+    
+    </table>
+    </div>
+    </div>
+    </center>
+     
+    
+
+<body>
+
+
+    </body>
+
+
+ <div class="np">
+    <button onclick="window.print()">download certificate</button>
+    
+    <form action="/mail/<%=usr._id%>/<%=crs.CrsName%>" method="POST">
+    <button type="submit"> Mail the certificate</button>
+    </form>
+</div>
+
+<script>
+    var d = new Date();
+    var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    document.getElementById("dt").innerHTML=months[d.getMonth()]+" of "+d.getFullYear();
+
+
+
+</script>
+
+
+</html>

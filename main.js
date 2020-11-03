@@ -69,7 +69,7 @@ courses.findOne({CrsName:req.params.cn}, function(err1,f1){
 
     console.log('Mail sent');
     transporter.sendMail({
-    from: 'rohithkrishna.vit2000@gmail.com',
+    from: 'enter the same email as above',
       to: f.Email,
       subject: f1.CrsName+"-certificate",
       text: 'Thank you for completing the course '+ f.Name,
